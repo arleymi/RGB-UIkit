@@ -9,35 +9,37 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet var colorView: UIView!
+    
+    @IBOutlet var colourView: UIView!
     
     @IBOutlet var redLab: UILabel!
     @IBOutlet var greenLab: UILabel!
     @IBOutlet var blueLab: UILabel!
     
-    @IBOutlet var redSlider: UISlider!
-    @IBOutlet var greenSlider: UISlider!
-    @IBOutlet var blueSlider: UISlider!
+    @IBOutlet var redSlide: UISlider!
+    @IBOutlet var greenSlide: UISlider!
+    @IBOutlet var blueSlide: UISlider!
     
-    @IBOutlet var redTextField: UITextField!
-    @IBOutlet var greenTextField: UITextField!
-    @IBOutlet var blueTextField: UITextField!
+    @IBOutlet var redTextFieldOne: UITextField!
+    @IBOutlet var greeenTextFIeldOne: UITextField!
+    
+    @IBOutlet var blueTextFieldOne: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorView.layer.cornerRadius = 17
+        colourView.layer.cornerRadius = 17
         
-        redSlider.tintColor = .red
-        greenSlider.tintColor = .green
+        redSlide.tintColor = .red
+        greenSlide.tintColor = .green
         
         setColor()
         setValueForLabel()
         setValueForTextField()
-        addDoneButtonTo(redTextField)
-        addDoneButtonTo(greenTextField)
-        addDoneButtonTo(blueTextField)
+        addDoneButtonTo(redTextFieldOne)
+        addDoneButtonTo(greeenTextFIeldOne)
+        addDoneButtonTo(blueTextFieldOne)
         
         // Do any additional setup after loading the view.
        }
@@ -48,34 +50,34 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0:
             redLab.text = string(from: sender)
-            redTextField.text = string(from: sender)
+            redTextFieldOne.text = string(from: sender)
         case 1:
             greenLab.text = string(from: sender)
-            greenTextField.text = string(from: sender)
+            greeenTextFIeldOne.text = string(from: sender)
         case 2:
             blueLab.text = string(from: sender)
-            blueTextField.text = string(from: sender)
+            blueTextFieldOne.text = string(from: sender)
         default:
             break
         }
         setColor()
     }
     private func setColor() {
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        colourView.backgroundColor = UIColor(red: CGFloat(redSlide.value), green: CGFloat(greenSlide.value), blue: CGFloat(blueSlide.value), alpha: 1)
     }
     private func setValueForLabel() {
-        redLab.text = string(from: redSlider)
-        greenLab.text = string(from: redSlider)
-        blueLab.text = string(from: blueSlider)
+        redLab.text = string(from: redSlide)
+        greenLab.text = string(from: redSlide)
+        blueLab.text = string(from: blueSlide)
     }
     private func setValueForTextField() {
-        redTextField.text = string(from: redSlider)
-        greenTextField.text = string(from: greenSlider)
-        blueTextField.text = string(from: blueSlider)
+        redTextFieldOne.text = string(from: redSlide)
+        greeenTextFIeldOne.text = string(from: greenSlide)
+        blueTextFieldOne.text = string(from: blueSlide)
     }
 
-    private func string(from slider: UISlider) -> String {
-        return String(format: "%.2f", slider.value)
+    private func string(from slide: UISlider) -> String {
+        return String(format: "%.2f", slide.value)
     }
 }
 
@@ -97,9 +99,9 @@ extension ViewController: UITextFieldDelegate {
         if let currentValue = Float(text)
         {
             switch textField.tag {
-            case 0: redSlider.value = currentValue
-            case 1: greenSlider.value = currentValue
-            case 2: blueSlider.value = currentValue
+            case 0: redSlide.value = currentValue
+            case 1: greenSlide.value = currentValue
+            case 2: blueSlide.value = currentValue
             default:break
             }
             setColor()

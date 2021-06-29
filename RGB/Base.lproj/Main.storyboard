@@ -11,7 +11,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RGB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -88,14 +87,14 @@
                                                             <action selector="rgbSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="jd1-c8-rnM"/>
                                                         </connections>
                                                     </slider>
-                                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Flw-Tk-cS8">
+                                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.59799999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Flw-Tk-cS8">
                                                         <rect key="frame" x="-2" y="56" width="180" height="31"/>
                                                         <connections>
                                                             <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="afo-9H-FTg"/>
                                                             <action selector="rgbSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="22S-LC-Jua"/>
                                                         </connections>
                                                     </slider>
-                                                    <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Oc-gZ2">
+                                                    <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.89997099999999997" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Oc-gZ2">
                                                         <rect key="frame" x="-2" y="112" width="180" height="31"/>
                                                         <connections>
                                                             <action selector="rgbSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="xhj-PD-MYB"/>
@@ -155,23 +154,28 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ColourView" destination="q8Y-KZ-Ugc" id="1B5-vA-2Sx"/>
                         <outlet property="blueLab" destination="VTl-Co-bzi" id="4Bx-ld-JG5"/>
-                        <outlet property="blueSlide" destination="rjW-8p-nQM" id="y0Z-bk-Jeu"/>
-                        <outlet property="blueSlider" destination="R8s-Oc-gZ2" id="oHT-aq-sfw"/>
+                        <outlet property="blueSlide" destination="R8s-Oc-gZ2" id="5cz-L6-PVQ"/>
+                        <outlet property="blueSlider" destination="R8s-Oc-gZ2" id="Ycd-Tr-I0K"/>
                         <outlet property="blueTextField" destination="ogw-di-At9" id="Q5d-9P-a9H"/>
+                        <outlet property="blueTextFieldOne" destination="ogw-di-At9" id="2qI-Ko-o0V"/>
                         <outlet property="colorView" destination="q8Y-KZ-Ugc" id="lfT-Ed-r5O"/>
+                        <outlet property="greeenTextFIeldOne" destination="qk0-7b-F0P" id="9fv-EK-OId"/>
                         <outlet property="greenLab" destination="KHw-sH-Lge" id="emg-ap-2BX"/>
-                        <outlet property="greenSlide" destination="rjW-8p-nQM" id="jkT-cj-3cx"/>
-                        <outlet property="greenSlider" destination="Flw-Tk-cS8" id="TSH-E0-Q7B"/>
+                        <outlet property="greenSlide" destination="Flw-Tk-cS8" id="VLw-4R-uYS"/>
+                        <outlet property="greenSlider" destination="Flw-Tk-cS8" id="kv4-V7-gF7"/>
                         <outlet property="greenTextField" destination="rjW-8p-nQM" id="Czz-Q6-dQc"/>
                         <outlet property="greenTextView" destination="qk0-7b-F0P" id="FSo-PC-hF6"/>
-                        <outlet property="redLab" destination="cPP-sn-a4X" id="a6t-SU-OOm"/>
-                        <outlet property="redSlide" destination="rjW-8p-nQM" id="Xyx-sB-yaW"/>
-                        <outlet property="redSlider" destination="edy-x6-sbm" id="ka2-6H-idk"/>
-                        <outlet property="redTextField" destination="rjW-8p-nQM" id="Wwg-iR-nFG"/>
+                        <outlet property="redLab" destination="cPP-sn-a4X" id="zfa-oZ-36p"/>
+                        <outlet property="redSlide" destination="edy-x6-sbm" id="uYC-Zp-Xti"/>
+                        <outlet property="redSlider" destination="edy-x6-sbm" id="E9W-v4-BzT"/>
+                        <outlet property="redTextField" destination="QTv-Cc-ZXh" id="6aX-AP-21Z"/>
+                        <outlet property="redTextFieldOne" destination="QTv-Cc-ZXh" id="Xaa-OB-RK3"/>
                         <outlet property="redTextView" destination="QTv-Cc-ZXh" id="FxC-Hv-YXI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="88.043478260869577"/>
         </scene>
