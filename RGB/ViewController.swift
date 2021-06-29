@@ -9,8 +9,8 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    
     @IBOutlet var colourView: UIView!
+    
     
     @IBOutlet var redLab: UILabel!
     @IBOutlet var greenLab: UILabel!
@@ -21,8 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet var blueSlide: UISlider!
     
     @IBOutlet var redTextFieldOne: UITextField!
-    @IBOutlet var greeenTextFIeldOne: UITextField!
-    
+    @IBOutlet var greeenTextFieldOne: UITextField!
     @IBOutlet var blueTextFieldOne: UITextField!
     
     
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
         setValueForLabel()
         setValueForTextField()
         addDoneButtonTo(redTextFieldOne)
-        addDoneButtonTo(greeenTextFIeldOne)
+        addDoneButtonTo(greeenTextFieldOne)
         addDoneButtonTo(blueTextFieldOne)
         
         // Do any additional setup after loading the view.
@@ -53,7 +52,7 @@ class ViewController: UIViewController {
             redTextFieldOne.text = string(from: sender)
         case 1:
             greenLab.text = string(from: sender)
-            greeenTextFIeldOne.text = string(from: sender)
+            greeenTextFieldOne.text = string(from: sender)
         case 2:
             blueLab.text = string(from: sender)
             blueTextFieldOne.text = string(from: sender)
@@ -72,7 +71,7 @@ class ViewController: UIViewController {
     }
     private func setValueForTextField() {
         redTextFieldOne.text = string(from: redSlide)
-        greeenTextFIeldOne.text = string(from: greenSlide)
+        greeenTextFieldOne.text = string(from: greenSlide)
         blueTextFieldOne.text = string(from: blueSlide)
     }
 

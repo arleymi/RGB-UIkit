@@ -161,7 +161,9 @@
                         <outlet property="blueTextField" destination="ogw-di-At9" id="Q5d-9P-a9H"/>
                         <outlet property="blueTextFieldOne" destination="ogw-di-At9" id="2qI-Ko-o0V"/>
                         <outlet property="colorView" destination="q8Y-KZ-Ugc" id="lfT-Ed-r5O"/>
+                        <outlet property="colourView" destination="q8Y-KZ-Ugc" id="L2C-B7-Qrn"/>
                         <outlet property="greeenTextFIeldOne" destination="qk0-7b-F0P" id="9fv-EK-OId"/>
+                        <outlet property="greeenTextFieldOne" destination="qk0-7b-F0P" id="Vwc-AY-XR7"/>
                         <outlet property="greenLab" destination="KHw-sH-Lge" id="emg-ap-2BX"/>
                         <outlet property="greenSlide" destination="Flw-Tk-cS8" id="VLw-4R-uYS"/>
                         <outlet property="greenSlider" destination="Flw-Tk-cS8" id="kv4-V7-gF7"/>
