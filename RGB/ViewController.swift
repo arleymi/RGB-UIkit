@@ -10,19 +10,22 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var colourView: UIView!
-    
+    @IBOutlet var redSlide: UISlider!
     
     @IBOutlet var redLab: UILabel!
     @IBOutlet var greenLab: UILabel!
     @IBOutlet var blueLab: UILabel!
     
-    @IBOutlet var redSlide: UISlider!
     @IBOutlet var greenSlide: UISlider!
+    @IBOutlet var redTextFieldOne: UITextField!
+    
+ 
+    @IBOutlet var greenTextFieldOne: UITextField!
+    @IBOutlet var blueTextFieldOne: UITextField!
+    
     @IBOutlet var blueSlide: UISlider!
     
-    @IBOutlet var redTextFieldOne: UITextField!
-    @IBOutlet var greeenTextFieldOne: UITextField!
-    @IBOutlet var blueTextFieldOne: UITextField!
+     var greeenTextFieldOne = UITextField()
     
     
     override func viewDidLoad() {
@@ -37,8 +40,12 @@ class ViewController: UIViewController {
         setValueForLabel()
         setValueForTextField()
         addDoneButtonTo(redTextFieldOne)
-        addDoneButtonTo(greeenTextFieldOne)
+        addDoneButtonTo(greenTextFieldOne)
         addDoneButtonTo(blueTextFieldOne)
+        
+        redTextFieldOne.delegate = self
+        greenTextFieldOne.delegate = self
+        blueTextFieldOne.delegate = self
         
         // Do any additional setup after loading the view.
        }
@@ -52,7 +59,7 @@ class ViewController: UIViewController {
             redTextFieldOne.text = string(from: sender)
         case 1:
             greenLab.text = string(from: sender)
-            greeenTextFieldOne.text = string(from: sender)
+            greenTextFieldOne.text = string(from: sender)
         case 2:
             blueLab.text = string(from: sender)
             blueTextFieldOne.text = string(from: sender)
@@ -66,12 +73,12 @@ class ViewController: UIViewController {
     }
     private func setValueForLabel() {
         redLab.text = string(from: redSlide)
-        greenLab.text = string(from: redSlide)
+        greenLab.text = string(from: greenSlide)
         blueLab.text = string(from: blueSlide)
     }
     private func setValueForTextField() {
         redTextFieldOne.text = string(from: redSlide)
-        greeenTextFieldOne.text = string(from: greenSlide)
+        greenTextFieldOne.text = string(from: greenSlide)
         blueTextFieldOne.text = string(from: blueSlide)
     }
 
@@ -89,19 +96,21 @@ extension ViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        
         view.endEditing(true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        print(#function)
         guard let text = textField.text else { return }
         
-        if let currentValue = Float(text)
-        {
+        if let currentValue = Float(text) {
+            
             switch textField.tag {
             case 0: redSlide.value = currentValue
             case 1: greenSlide.value = currentValue
             case 2: blueSlide.value = currentValue
-            default:break
+            default: break
             }
             setColor()
             setValueForLabel()
@@ -130,6 +139,6 @@ extension ViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
-        present(alert,animated: true)
+        present(alert, animated: true)
     }
 }
