@@ -6,8 +6,7 @@
 //
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ColorViewController: UIViewController {
     
     @IBOutlet var colourView: UIView!
     @IBOutlet var redSlide: UISlider!
@@ -25,8 +24,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var blueSlide: UISlider!
     
-     var greeenTextFieldOne = UITextField()
     
+    
+    var delegate: ColorDelegate?
+    var colorFromMainVC: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
        }
     
+    @IBAction func doneButtonPressed() {
+        dismiss(animated: true)
+    }
     
     @IBAction func rgbSliders(_ sender: UISlider) {
         
@@ -68,8 +72,10 @@ class ViewController: UIViewController {
         }
         setColor()
     }
-    private func setColor() {
-        colourView.backgroundColor = UIColor(red: CGFloat(redSlide.value), green: CGFloat(greenSlide.value), blue: CGFloat(blueSlide.value), alpha: 1)
+    func setColor() {
+        let newColor = UIColor(red: CGFloat(redSlide.value), green: CGFloat(greenSlide.value), blue: CGFloat(blueSlide.value), alpha: 1)
+        colourView.backgroundColor = newColor
+        delegate?.setColor(newColor)
     }
     private func setValueForLabel() {
         redLab.text = string(from: redSlide)
@@ -87,7 +93,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension ColorViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -120,7 +126,7 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
-extension ViewController {
+extension ColorViewController {
     private func addDoneButtonTo(_ textField: UITextField) {
         
         let keyboardToolbar = UIToolbar()
